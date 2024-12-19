@@ -11,6 +11,8 @@ import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { s3Storage } from '@payloadcms/storage-s3'
 import { Pages } from './collections/Pages'
+import { Header } from './globals/Header'
+import { Footer } from './globals/Footer'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -23,6 +25,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Pages, Media],
+  globals: [Header, Footer],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
@@ -35,7 +38,7 @@ export default buildConfig({
   plugins: [
     s3Storage({
       collections: {
-        'media': {
+        media: {
           prefix: 'media',
         },
       },
@@ -48,7 +51,7 @@ export default buildConfig({
         region: process.env.S3_REGION,
         endpoint: process.env.S3_ENDPOINT,
         forcePathStyle: true,
-      }
-    })
+      },
+    }),
   ],
 })
