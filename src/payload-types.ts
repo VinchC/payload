@@ -90,7 +90,6 @@ export interface Page {
   id: string;
   name: string;
   slug: string;
-  layout?: unknown[] | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -197,7 +196,6 @@ export interface UsersSelect<T extends boolean = true> {
 export interface PagesSelect<T extends boolean = true> {
   name?: T;
   slug?: T;
-  layout?: T | {};
   updatedAt?: T;
   createdAt?: T;
 }
@@ -259,13 +257,11 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
 export interface Header {
   id: string;
   logo: string | Media;
-  nav?:
-    | {
-        label?: string | null;
-        link?: string | null;
-        id?: string | null;
-      }[]
-    | null;
+  nav: {
+    label?: string | null;
+    link?: string | null;
+    id?: string | null;
+  }[];
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -276,13 +272,11 @@ export interface Header {
 export interface Footer {
   id: string;
   logo: string | Media;
-  nav?:
-    | {
-        label?: string | null;
-        link?: string | null;
-        id?: string | null;
-      }[]
-    | null;
+  nav: {
+    label?: string | null;
+    link?: string | null;
+    id?: string | null;
+  }[];
   copyrightNotice: string;
   updatedAt?: string | null;
   createdAt?: string | null;
