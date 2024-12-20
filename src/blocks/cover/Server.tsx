@@ -2,7 +2,7 @@ export default function CoverBlockServer({ title, subtitle }: { title: string; s
   return (
     <div className="max-w-5xl py-20">
       <h1 className="text-3xl font-bold">{title}</h1>
-      <p className="text-xl">{title}</p>
+      <p className="text-xl">{subtitle}</p>
     </div>
   )
 }

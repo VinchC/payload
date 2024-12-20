@@ -1,5 +1,3 @@
-import React from 'react'
+import PageTemplate from './[slug]/page';
 
-export default function page() {
-  return <div className="bg-green-100">Hello</div>
-}
+export default PageTemplate
